@@ -126,31 +126,31 @@
 			$mivalidada = ($row[10] == 1) ? "Sí" : "No";
 			echo "<tr>
 							<td>
-									".$row[0]."
+									<input value='{$row[0]}'>
 							</td>
 							<td>
-									".$row[1]."
+									<input value='{$row[1]}'>
 							</td>
 							<td>
-									".$row[2]."
+									<input value='{$row[2]}'>
 							</td>
 							<td>
-									".$row[3]."
+									<input value='{$row[3]}'>
 							</td>
 							<td>
-									".$row[4]."
+									<input value='{$row[4]}'>
 							</td>
 							<td>
-									".$row[5]."
+									<input value='{$row[5]}'>
 							</td>
 							<td>
-									".$row[6]."
+									<input value='{$row[6]}'>
 							</td>
 							<td>
-									".$row[7]."
+									<input value='{$row[7]}'>
 							</td>
 							<td>
-									".$miestatus."
+									<
 							</td>
 							<td>
 									".$row[9]."
@@ -177,9 +177,14 @@
 		getVentas($sql);
 	}
 
-	function getLineasSelect(){
+	function getLineasArray(){
 		$sql = "SELECT id_linea_de_producto, nombre FROM Linea_de_Producto";
 		$result = (sqlSelect($sql));
+		return $result;
+	}
+
+	function getLineasSelect(){
+		$result = getLineasArray();
 		echo '<select class="form-control" id="linea-producto">';
 		while ($linea = mysqli_fetch_array($result)) {
 			echo '<option value="' . $linea[0] . '">'. $linea[1] . '</option>';
