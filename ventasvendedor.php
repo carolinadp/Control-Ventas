@@ -101,7 +101,7 @@ include("db_manager.php");
     </div>
 
   </body>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/moment.min.js"></script>
   <script src="js/daterangepicker.js"></script>
   <script src="js/bootstrap.min.js"></script>

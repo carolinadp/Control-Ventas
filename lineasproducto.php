@@ -53,8 +53,7 @@ include("db_manager.php");
 <script src='js/jquery-ui.min.js'></script>
 <script src='js/underscore.js'></script>
 <script src='js/bootstrap.min.js'></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/edittable.js"></sript>
+<script src="js/edittable.js"></script>
 <script src="js/jquery-3.3.1.js"></script>
 </html>
