@@ -94,68 +94,9 @@ include("db_manager.php");
       </div>
 
       <div class="row my-4">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>
-                Cliente
-              </th>
-              <th>
-                Empresa
-              </th>
-              <th>
-                Concepto
-              </th>
-              <th>
-                Monto antes de impuestos
-              </th>
-              <th>
-                Fecha de ingreso
-              </th>
-              <th>
-                Fecha de pago
-              </th>
-              <th>
-                Linea de producto  
-              </th>
-              <th>
-                Numero factura
-              </th>
-              <th>
-                Estatus
-              </th>
-            </tr>
-            <tr>
-              <td>
-                Juan perez
-              </td>
-              <td>
-                Plásticos Gonzalez
-              </td>
-              <td>
-                Moldes
-              </td>
-              <td>
-                150
-              </td>
-              <td>
-                15-02-2019
-              </td>
-              <td>
-                20-02-2019
-              </td>
-              <td>
-                asdf
-              </td>
-              <td>
-                1234
-              </td>
-              <td>
-                Pagada
-              </td>
-            </tr>
-          </thead>
-        </table>
+        <?php
+            getVentasFechas(4, "03-04-2019", "04-04-2019");
+        ?>
       </div>
     </div>
 
