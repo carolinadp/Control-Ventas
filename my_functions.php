@@ -194,10 +194,10 @@
 
 		while( $row = mysqli_fetch_array($result,MYSQLI_BOTH) ){
 			echo "<tr>";
-			echo "<td contenteditable='false'>".$row["id_linea_de_producto"]."</td>";
-			echo "<td contenteditable='true'>".$row["nombre"]."</td>";
-			echo "<td contenteditable='true'>".$row["comision"]."</td>";
-			echo "<td><span class='table-remove'>Remover</span></td>";
+			echo "<td contenteditable='false' id='idLinea'>".$row["id_linea_de_producto"]."</td>";
+			echo "<td contenteditable='true' id='nombreLinea'>".$row["nombre"]."</td>";
+			echo "<td contenteditable='true' id='comisionLinea'>".$row["comision"]."</td>";
+			echo "<td><span  class='table-remove'>Remover</span></td>";
 			echo "</tr>";
 		}
 	}

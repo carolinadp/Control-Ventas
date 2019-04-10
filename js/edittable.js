@@ -28,30 +28,25 @@ $('.table-add').click(function () {
 });
 
 $('.table-remove').click(function () {
-  var $id = $(this).parents('tr');
-  console.log($id.parents('tr').find('td#idLinea'));
   $(this).parents('tr').detach();
-  /*
+  $id = $(this).parents('tr').find('#idLinea').html();
+  console.log($(this).parents('tr').find('#idLinea').html());
   jQuery.ajax({
     type: "POST",
     url: 'db_lineas.php',
     dataType: 'json',
-    data: {functionname: 'insertLineaDeProducto', arguments: []},
+    data: {functionname: 'deleteLineaDeProducto', arguments: [$id]},
     success: function (obj, textstatus) {
                   console.log(obj);
                   console.log(textstatus);
                   if( textstatus == "success" ) {
-                      idLinea = obj;
-                      $clone.find('td#idLinea').html(idLinea);
-                      $clone.find('td#nombreLinea').html('Nueva linea');
-                      $clone.find('td#comisionLinea').html('0.0');
+                    console.log('todo bien');
                   }
                   else {
                       console.log(obj.error);
                   }
             }
   });
-  */
 });
 
 $('.table-up').click(function () {
