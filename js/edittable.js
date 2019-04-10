@@ -23,7 +23,6 @@ $('.table-add').click(function () {
                   }
             }
   });
-  
   console.log($clone);
   $TABLE.find('table').append($clone);
 });

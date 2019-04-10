@@ -1,3 +1,7 @@
+<?php
+include("my_functions.php");
+include("db_manager.php");
+?>
 <html>
   <head>
     <title>Registro personal de ventas</title>
@@ -48,10 +52,9 @@
             </div>
             <div class="form-group">
               <label for="linea-producto">Linea del producto:</label>
-              <select class="form-control" id="linea-producto">
-                <option>asdf</option>
-                <option>ghjk</option>
-              </select>          
+              <?php
+              getLineasSelect()
+              ?>
             </div>
             <div class="form-group">
               <label for="numero-factura">Numero de factura:</label>
@@ -60,9 +63,8 @@
             <div class="form-group">
               <label for="estatus">Estatus:</label>
               <select class="form-control" id="estatus">
-                <option>Seleccione estatus</option>
-                <option>Pagada</option>
-                <option>Pendiente</option>
+                <option value="0">Pendiente</option>
+                <option value="1">Pagada</option>
               </select>
             </div>
             <button type="enviar" class="btn btn-primary">Enviar</button>
@@ -92,73 +94,14 @@
       </div>
 
       <div class="row my-4">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>
-                Cliente
-              </th>
-              <th>
-                Empresa
-              </th>
-              <th>
-                Concepto
-              </th>
-              <th>
-                Monto antes de impuestos
-              </th>
-              <th>
-                Fecha de ingreso
-              </th>
-              <th>
-                Fecha de pago
-              </th>
-              <th>
-                Linea de producto  
-              </th>
-              <th>
-                Numero factura
-              </th>
-              <th>
-                Estatus
-              </th>
-            </tr>
-            <tr>
-              <td>
-                Juan perez
-              </td>
-              <td>
-                Plásticos Gonzalez
-              </td>
-              <td>
-                Moldes
-              </td>
-              <td>
-                150
-              </td>
-              <td>
-                15-02-2019
-              </td>
-              <td>
-                20-02-2019
-              </td>
-              <td>
-                asdf
-              </td>
-              <td>
-                1234
-              </td>
-              <td>
-                Pagada
-              </td>
-            </tr>
-          </thead>
-        </table>
+        <?php
+            getVentasFechas(4, "03-04-2019", "04-04-2019");
+        ?>
       </div>
     </div>
 
   </body>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/moment.min.js"></script>
   <script src="js/daterangepicker.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -171,7 +114,7 @@
 
       "singleDatePicker": true,
       locale: {
-          format: 'DD/MM/YYYY'
+          format: 'DD-MM-YYYY'
       },
       "startDate": moment(),
   }, function(start, end, label) {

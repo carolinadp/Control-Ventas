@@ -111,7 +111,7 @@
 
         </body>
 
-        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/moment.min.js"></script>
         <script src="js/daterangepicker.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -124,7 +124,7 @@
 
                 "singleDatePicker": true,
                 locale: {
-                    format: 'DD/MM/YYYY'
+                    format: 'DD-MM-YYYY'
                 },
                 "timepicker": false,
                 "startDate": moment(),

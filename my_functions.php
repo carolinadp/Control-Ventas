@@ -73,6 +73,120 @@
 		echo "</tbody></table>";
 	}
 
+	function insertarVenta($id_usuario, $cliente, $empresa, $concepto, $monto, $fecha_ingreso, $fecha_pago, $linea_producto, $numero_factura, $estatus, $validada) {
+		$sql = "INSERT INTO venta (id_usuario, cliente, empresa, concepto, monto, fecha_ingreso, fecha_pago, linea_producto, numero_factura, estatus, validada)".
+		" VALUES (". $id_usuario .", '".$cliente."', '". $empresa ."', '".$concepto."', ".$monto.", STR_TO_DATE('".$fecha_ingreso."', '%d-%m-%Y'), STR_TO_DATE('".$fecha_pago."', '%d-%m-%Y'), ".$linea_producto.", '". $numero_factura ."', ". $estatus .", ". $validada .")";
+
+		sqlInsert($sql);
+	}
+
+	function getVentas($sql) {
+
+		echo "<table class=\"table table-striped\" id=\"tabla-principal\">
+                        <thead>
+                        <tr>
+                            <th>
+                                Cliente
+                            </th>
+                            <th>
+                                Empresa
+                            </th>
+                            <th>
+                                Concepto
+                            </th>
+                            <th>
+                                Monto antes de impuestos
+                            </th>
+                            <th>
+                                Fecha de ingreso
+                            </th>
+                            <th>
+                                Fecha de pago
+                            </th>
+                            <th>
+                                Linea de producto
+                            </th>
+                            <th>
+                                Numero factura
+                            </th>
+                            <th>
+                                Estatus
+                            </th>
+                            <th>
+                                Comisión
+                            </th>
+                            <th>
+                            		Validada
+														</th>
+                        </tr>";
+
+		$result = (sqlSelect($sql));
+		while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+			$miestatus = ($row[8] == 1) ? "Pagada" : "Pendiente";
+			$mivalidada = ($row[10] == 1) ? "Sí" : "No";
+			echo "<tr>
+							<td>
+									".$row[0]."
+							</td>
+							<td>
+									".$row[1]."
+							</td>
+							<td>
+									".$row[2]."
+							</td>
+							<td>
+									".$row[3]."
+							</td>
+							<td>
+									".$row[4]."
+							</td>
+							<td>
+									".$row[5]."
+							</td>
+							<td>
+									".$row[6]."
+							</td>
+							<td>
+									".$row[7]."
+							</td>
+							<td>
+									".$miestatus."
+							</td>
+							<td>
+									".$row[9]."
+							</td>
+							<td>
+									".$mivalidada."
+							</td>
+					</tr>";
+		}
+	}
+
+	function getVentasUsuario($id_usuario){
+		$sql = "SELECT venta.cliente, venta.empresa, venta.concepto, venta.monto, DATE_FORMAT(venta.fecha_ingreso, '%d-%m-%Y'), DATE_FORMAT(venta.fecha_pago, '%d-%m-%Y'), Linea_de_Producto.nombre, numero_factura, estatus, (Linea_de_Producto.comision * venta.monto) AS micomision, validada FROM venta ".
+			"INNER JOIN Linea_de_Producto ON Linea_de_Producto.id_linea_de_producto = venta.linea_producto".
+			" WHERE venta.id_usuario = ". $id_usuario;
+		getVentas($sql);
+	}
+
+	function getVentasFechas($id_usuario, $fecha_inicio, $fecha_fin){
+		$sql = "SELECT venta.cliente, venta.empresa, venta.concepto, venta.monto, DATE_FORMAT(venta.fecha_ingreso, '%d-%m-%Y'), DATE_FORMAT(venta.fecha_pago, '%d-%m-%Y'), Linea_de_Producto.nombre, numero_factura, estatus, (Linea_de_Producto.comision * venta.monto) AS micomision, validada FROM venta ".
+			"INNER JOIN Linea_de_Producto ON Linea_de_Producto.id_linea_de_producto = venta.linea_producto".
+			" WHERE venta.id_usuario = ". $id_usuario ." AND venta.fecha_ingreso >= STR_TO_DATE('".$fecha_inicio."', '%d-%m-%Y') AND venta.fecha_ingreso <= STR_TO_DATE('".$fecha_fin."', '%d-%m-%Y')";
+
+		getVentas($sql);
+	}
+
+	function getLineasSelect(){
+		$sql = "SELECT id_linea_de_producto, nombre FROM Linea_de_Producto";
+		$result = (sqlSelect($sql));
+		echo '<select class="form-control" id="linea-producto">';
+		while ($linea = mysqli_fetch_array($result)) {
+			echo '<option value="' . $linea[0] . '">'. $linea[1] . '</option>';
+		}
+		echo '</select>';
+	}
+	
 	function getLineasDeProducto()
 	{
 		$sql = "SELECT * FROM Linea_de_Producto";
@@ -86,21 +200,5 @@
 			echo "<td><span class='table-remove'>Remover</span></td>";
 			echo "</tr>";
 		}
-	}
-
-	function insertLineaDeProducto()
-	{
-		$funcion = $_POST("functionname");
-		$argumentos = $_POST("arguments");
-		$sql = "INSERT INTO Linea_de_Producto(nombre, comision) VALUES ('".$argumentos[0]."', ".$argumentos[1].")";
-		sqlInsert(sql);
-		$sql = "SELECT id_linea_de_producto FROM Linea_de_Producto ORDER BY id_linea_de_producto DESC LIMIT 1";
-		$result = (sqlSelect($sql));
-		while( $row = mysqli_fetch_array($result,MYSQLI_BOTH) ){
-			$rows[] = $row;
-		}
-		$res = $rows[0]['id_linea_de_producto'];
-		echo json_encode($res);
-		return ($res);
 	}
 ?>
