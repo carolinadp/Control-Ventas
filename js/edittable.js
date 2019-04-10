@@ -4,6 +4,10 @@ var $EXPORT = $('#export');
 
 $('.table-add').click(function () {
   var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
+  $clone.find('td#idLinea').html('34');
+  $clone.find('td#nombreLinea').html('sirviendo');
+  $clone.find('td#comisionLinea').html('0.5');
+  console.log($clone);
   $TABLE.find('table').append($clone);
 });
 
