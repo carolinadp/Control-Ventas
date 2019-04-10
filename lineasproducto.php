@@ -12,7 +12,9 @@
 </head>
 <body>
 <?php
-include("navbargerente.php")
+include("navbargerente.php");
+include("my_functions.php");
+include("db_manager.php");
 ?>
 
 <div class="container">
@@ -23,21 +25,19 @@ include("navbargerente.php")
     <span class="table-add glyphicon glyphicon-plus">Agregar</span>
     <table class="table">
       <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Value</th>
         <th></th>
       </tr>
-      <tr>
-        <td contenteditable="true">Stir Fry</td>
-        <td contenteditable="true">stir-fry</td>
-        <td>
-          <span class="table-remove glyphicon glyphicon-remove">Remover</span>
-        </td>
-      </tr>
+      <?php
+        getLineasDeProducto();
+      ?>
       <!-- This is our clonable table line -->
       <tr class="hide">
-        <td contenteditable="true">Untitled</td>
-        <td contenteditable="true">undefined</td>
+        <td contenteditable="true" id="idLinea">hidden ID</td>
+        <td contenteditable="true" id="nombreLinea">Untitled</td>
+        <td contenteditable="true" id="comisionLinea">undefined</td>
         <td>
           <span class="table-remove glyphicon glyphicon-remove">Remover</span>
         </td>
