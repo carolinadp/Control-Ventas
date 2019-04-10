@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="edittable.css"> 
   <script type="text/javascript">
     var $TABLE = $('#table');
@@ -66,19 +65,15 @@
   </script>
 </head>
 <body>
+<?php
+include("navbargerente.php")
+?>
 
 <div class="container">
-  <h3>Gerente</h3>
-  <ul class="nav nav-pills">
-    <li><a href="aprobar.php">Aprobar ventas</a></li>
-    <li><a href="comisiones.php">Calcular comisiones</a></li>
-    <li class="active"><a href="lineasproducto.php">Líneas de producto</a></li>
-  </ul>
-</div>
-
-<div class="container">
-  
-  <div id="table" class="table-editable">
+    <div class="row my-12">
+        <h1>Líneas de productos</h1>
+    </div>
+    <div id="table" class="table-editable">
     <span class="table-add glyphicon glyphicon-plus"></span>
     <table class="table">
       <tr>
@@ -109,4 +104,6 @@
 </div>
 
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </html>

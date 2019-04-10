@@ -113,6 +113,7 @@
         <script src="js/moment.min.js"></script>
         <script src="js/daterangepicker.js"></script>
         <script src="js/datepicker.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script>
             $('#boton-nueva-venta').click(function(){
                 $('#menu-nueva-venta').toggleClass("collapsed");
