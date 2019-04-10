@@ -68,7 +68,7 @@
 			echo "<tr><th scope = 'row'>".$numRow."</th>";
 			$numRow += 1;
 			$comisiones = getComision($idVendedor[0]);
-			echo "<td>".$comisiones[nombre_usuario]."</td><td>".$comisiones[comisiones]."</td></tr>";
+			echo "<td>".$comisiones['nombre_usuario']."</td><td>".$comisiones['comisiones']."</td></tr>";
 		}
 		echo "</tbody></table>";
 	}
