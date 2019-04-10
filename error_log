@@ -1,0 +1,56 @@
+[03-Apr-2019 18:43:16 America/Mexico_City] PHP Fatal error:  Call to undefined function validarUsuario() in /home/wwwplustexting/public_html/equipo3/ventas/login.php on line 8
+[03-Apr-2019 18:44:41 America/Mexico_City] PHP Fatal error:  Call to undefined function validarUsuario() in /home/wwwplustexting/public_html/equipo3/ventas/login.php on line 8
+[03-Apr-2019 18:44:47 America/Mexico_City] PHP Fatal error:  Call to undefined function validarUsuario() in /home/wwwplustexting/public_html/equipo3/ventas/login.php on line 8
+[03-Apr-2019 18:46:10 America/Mexico_City] PHP Parse error:  syntax error, unexpected '}' in /home/wwwplustexting/public_html/equipo3/ventas/login.php on line 24
+[03-Apr-2019 18:48:29 America/Mexico_City] PHP Parse error:  syntax error, unexpected '}' in /home/wwwplustexting/public_html/equipo3/ventas/login.php on line 26
+[03-Apr-2019 19:46:52 America/Mexico_City] PHP Fatal error:  Call to undefined function validarUsuario() in /home/wwwplustexting/public_html/equipo3/ventas/login.php on line 8
+[03-Apr-2019 19:47:54 America/Mexico_City] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'wwwplust_marcom'@'localhost' to database 'wwwplust_mamexamen1' in /home/wwwplustexting/public_html/equipo3/ventas/db_manager.php on line 13
+[03-Apr-2019 19:48:27 America/Mexico_City] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/wwwplustexting/public_html/equipo3/ventas/login.php on line 37
+[03-Apr-2019 19:49:51 America/Mexico_City] PHP Fatal error:  Call to undefined function validarUsuario() in /home/wwwplustexting/public_html/equipo3/ventas/login.php on line 11
+[08-Apr-2019 18:00:26 America/Mexico_City] PHP Parse error:  syntax error, unexpected 'as' (T_AS), expecting ';' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 51
+[08-Apr-2019 18:00:31 America/Mexico_City] PHP Parse error:  syntax error, unexpected 'as' (T_AS), expecting ';' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 51
+[08-Apr-2019 18:01:13 America/Mexico_City] PHP Parse error:  syntax error, unexpected 'as' (T_AS), expecting ';' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 51
+[08-Apr-2019 18:03:59 America/Mexico_City] PHP Parse error:  syntax error, unexpected 'as' (T_AS), expecting ';' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 51
+[08-Apr-2019 18:10:57 America/Mexico_City] PHP Warning:  Missing argument 1 for getComisiones(), called in /home/wwwplustexting/public_html/equipo3/ventas/comisiones.php on line 4 and defined in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 49
+[08-Apr-2019 18:10:57 America/Mexico_City] PHP Warning:  Invalid argument supplied for foreach() in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 52
+[08-Apr-2019 18:12:18 America/Mexico_City] PHP Warning:  Missing argument 1 for getComisiones(), called in /home/wwwplustexting/public_html/equipo3/ventas/comisiones.php on line 4 and defined in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 49
+[08-Apr-2019 18:12:18 America/Mexico_City] PHP Warning:  Invalid argument supplied for foreach() in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 52
+[08-Apr-2019 18:12:35 America/Mexico_City] PHP Parse error:  syntax error, unexpected 'getComisiones' (T_STRING) in /home/wwwplustexting/public_html/equipo3/ventas/comisiones.php on line 6
+[08-Apr-2019 18:13:34 America/Mexico_City] PHP Warning:  Invalid argument supplied for foreach() in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 52
+[08-Apr-2019 18:15:16 America/Mexico_City] PHP Warning:  Invalid argument supplied for foreach() in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 52
+[08-Apr-2019 18:15:22 America/Mexico_City] PHP Warning:  Invalid argument supplied for foreach() in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 52
+[08-Apr-2019 18:24:02 America/Mexico_City] PHP Warning:  Invalid argument supplied for foreach() in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 52
+[08-Apr-2019 18:24:14 America/Mexico_City] PHP Parse error:  syntax error, unexpected 'while' (T_WHILE), expecting ',' or ';' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 44
+[08-Apr-2019 18:24:45 America/Mexico_City] PHP Warning:  Invalid argument supplied for foreach() in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 54
+[08-Apr-2019 18:26:56 America/Mexico_City] PHP Warning:  Invalid argument supplied for foreach() in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:37:52 America/Mexico_City] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 69
+[08-Apr-2019 18:39:13 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:39:13 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:39:13 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:40:53 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:40:53 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:40:53 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:41:40 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:41:40 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:41:40 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:46:07 America/Mexico_City] PHP Parse error:  syntax error, unexpected '$comisiones' (T_VARIABLE), expecting ',' or ';' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 67
+[08-Apr-2019 18:47:04 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:47:04 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:47:04 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:47:47 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:47:47 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:47:47 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:47:51 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:47:51 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:47:51 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:48:11 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:48:11 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:48:11 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 53
+[08-Apr-2019 18:49:10 America/Mexico_City] PHP Warning:  Illegal string offset 'nombre_usuario' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 55
+[08-Apr-2019 18:49:10 America/Mexico_City] PHP Warning:  Illegal string offset 'nombre_usuario' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 55
+[08-Apr-2019 18:49:10 America/Mexico_City] PHP Warning:  Illegal string offset 'nombre_usuario' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 55
+[08-Apr-2019 18:50:30 America/Mexico_City] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 69
+[08-Apr-2019 19:04:18 America/Mexico_City] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH), expecting ',' or ';' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 66
+[08-Apr-2019 22:46:30 America/Mexico_City] PHP Parse error:  syntax error, unexpected '$numRow' (T_VARIABLE), expecting ',' or ';' in /home/wwwplustexting/public_html/equipo3/ventas/my_functions.php on line 65
+[08-Apr-2019 22:55:17 America/Mexico_City] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/wwwplustexting/public_html/equipo3/ventas/empresa.php:2) in /home/wwwplustexting/public_html/equipo3/ventas/empresa.php on line 5
+[08-Apr-2019 22:55:48 America/Mexico_City] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/wwwplustexting/public_html/equipo3/ventas/empresa.php:2) in /home/wwwplustexting/public_html/equipo3/ventas/empresa.php on line 5
