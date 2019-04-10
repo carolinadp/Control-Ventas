@@ -19,6 +19,7 @@
     color: #fff;
 }
 
+/*
 .calendar-time > div {
     display: flex;
     justify-content: space-between;  
@@ -37,7 +38,6 @@
     text-align: center;
 }
 
-/*Kill me plz*/
 .table-condensed thead:first-of-type tr:first-of-type th:first-of-type {
     display: inline-block;
     width: 10px;
@@ -57,4 +57,4 @@
     transform: rotate(45deg) translate(4px,5px);
 }
 
-
+*/

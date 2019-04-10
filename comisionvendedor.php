@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/daterangepicker.css" />
     </head>
         <body>
             <?php
@@ -109,25 +110,26 @@
             </div>
 
         </body>
+
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script src="js/moment.min.js"></script>
         <script src="js/daterangepicker.js"></script>
-        <script src="js/datepicker.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script>
             $('#boton-nueva-venta').click(function(){
                 $('#menu-nueva-venta').toggleClass("collapsed");
             });
 
-            function datepicker(id){
-                $('#'+id).daterangepicker({
-                    singleDatePicker: true,
-                    timePicker: true,
-                    minDate:new Date(),
-                    locale: {
-                        format: 'YYYY/MM/DD HH:mm'
-                    }
-                });
-            }
+            $('.datetime').daterangepicker({
+
+                "singleDatePicker": true,
+                locale: {
+                    format: 'DD/MM/YYYY'
+                },
+                "timepicker": false,
+                "startDate": moment(),
+            }, function(start, end, label) {
+                console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+            });
         </script>
 </html>
