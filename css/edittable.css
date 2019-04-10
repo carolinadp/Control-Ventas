@@ -31,4 +31,7 @@
   .table-add:hover {
     color: #0b0;
   }
+  .hide{
+    display:none
+  }
   
