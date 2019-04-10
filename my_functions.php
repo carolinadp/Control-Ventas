@@ -89,4 +89,20 @@
 		}
 		echo '</select>';
 	}
+	
+	function getLineasDeProducto()
+	{
+		$sql = "SELECT * FROM Linea_de_Producto";
+		$result = (sqlSelect($sql));
+
+		while( $row = mysqli_fetch_array($result,MYSQLI_BOTH) ){
+			echo "<tr>";
+			echo "<td contenteditable='false'>".$row["id_linea_de_producto"]."</td>";
+			echo "<td contenteditable='true'>".$row["nombre"]."</td>";
+			echo "<td contenteditable='true'>".$row["comision"]."</td>";
+			echo "<td><span class='table-remove'>Remover</span></td>";
+			echo "</tr>";
+		}
+	}
+	
 ?>
