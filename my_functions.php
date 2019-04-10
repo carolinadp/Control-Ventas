@@ -72,4 +72,21 @@
 		}
 		echo "</tbody></table>";
 	}
+
+	function insertarVenta($id_usuario, $cliente, $empresa, $concepto, $monto, $fecha_ingreso, $fecha_pago, $linea_producto, $numero_factura, $estatus, $validada) {
+		$sql = "INSERT INTO venta (id_usuario, cliente, empresa, concepto, monto, fecha_ingreso, fecha_pago, linea_producto, numero_factura, estatus, validada)".
+		" VALUES (". $id_usuario .", '".$cliente."', '". $empresa ."', '".$concepto."', ".$monto.", STR_TO_DATE('".$fecha_ingreso."', '%d-%m-%Y'), STR_TO_DATE('".$fecha_pago."', '%d-%m-%Y'), ".$linea_producto.", '". $numero_factura ."', ". $estatus .", ". $validada .")";
+
+		sqlInsert($sql);
+	}
+
+	function getLineasSelect(){
+		$sql = "SELECT id_linea_de_producto, nombre FROM Linea_de_Producto";
+		$result = (sqlSelect($sql));
+		echo '<select class="form-control" id="linea-producto">';
+		while ($linea = mysqli_fetch_array($result)) {
+			echo '<option value="' . $linea[0] . '">'. $linea[1] . '</option>';
+		}
+		echo '</select>';
+	}
 ?>

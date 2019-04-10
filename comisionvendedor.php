@@ -124,7 +124,7 @@
 
                 "singleDatePicker": true,
                 locale: {
-                    format: 'DD/MM/YYYY'
+                    format: 'DD-MM-YYYY'
                 },
                 "timepicker": false,
                 "startDate": moment(),

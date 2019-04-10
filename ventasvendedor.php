@@ -1,3 +1,7 @@
+<?php
+include("my_functions.php");
+include("db_manager.php");
+?>
 <html>
   <head>
     <title>Registro personal de ventas</title>
@@ -48,10 +52,9 @@
             </div>
             <div class="form-group">
               <label for="linea-producto">Linea del producto:</label>
-              <select class="form-control" id="linea-producto">
-                <option>asdf</option>
-                <option>ghjk</option>
-              </select>          
+              <?php
+              getLineasSelect()
+              ?>
             </div>
             <div class="form-group">
               <label for="numero-factura">Numero de factura:</label>
@@ -60,9 +63,8 @@
             <div class="form-group">
               <label for="estatus">Estatus:</label>
               <select class="form-control" id="estatus">
-                <option>Seleccione estatus</option>
-                <option>Pagada</option>
-                <option>Pendiente</option>
+                <option value="0">Pendiente</option>
+                <option value="1">Pagada</option>
               </select>
             </div>
             <button type="enviar" class="btn btn-primary">Enviar</button>
@@ -171,7 +173,7 @@
 
       "singleDatePicker": true,
       locale: {
-          format: 'DD/MM/YYYY'
+          format: 'DD-MM-YYYY'
       },
       "startDate": moment(),
   }, function(start, end, label) {
