@@ -1,0 +1,31 @@
+Se requiere un sistema para control de comisiones para un equipo de ventas. Cada vendedor debe tener un acceso con usuario y password para ingresar al sistema. Dentro del sistema los vendedores deberan ingresar cada una de sus ventas con las siguientes variables.
+
+1. Cliente
+2. Empresa
+3. Concepto
+4. Monto antes de impuestos
+5. Fecha de ingreso (en automatico)
+6. Fecha de pago
+7. Linea de producto (catalogo en bd)
+8. Numero de factura
+9. Estatus (Pagada, Pendiente)
+
+Una vez ingresadas deberan ser visibles en una tabla en su panel principal y deberan poder hacer filtro por rango de fecha.
+
+Debe haber una seccion que muestre al vendedor su comision correspondiente por filtro de rango de fechas solo de las ventas validadas por el gerente.
+
+_______________________________________________________________________________________________
+
+El sistema debe tener un acceso administrador para el gerente de ventas el cual debe tener tres herramientas>
+
+1. Visor de ventas: en este apartado el sistema debera mostrar la tabla de las ventas con filtros por vendedor y por rango de fechas. En esta seccion el gerente debera poder cambiar un campo de venta validada en la misma tabla para el calculo de comisiones 10. Validado (Si, No)
+
+2. Comisiones de vendedores: este apartado debera calcular las comisiones de cada vendedor en base a sus ventas realizadas, mostrando lo correspondiente en una tabla con todos los vendedores. Solo calcula las comisiones de ventas validadas por el gerente.
+
+3. Administracion de linea de productos: Este apartado debe permitir agregar, editar y eliminar lineas de producto y la comision de venta por cada linea. Este catalogo sirve para calcular la comision de cada venta ya que cada linea de producto se paga diferente.
+
+
+USAR PHP, BOOTSTRAP Y JQUERY
+
+
+
