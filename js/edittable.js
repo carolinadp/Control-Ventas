@@ -4,11 +4,55 @@ var $EXPORT = $('#export');
 
 $('.table-add').click(function () {
   var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
+  jQuery.ajax({
+    type: "POST",
+    url: 'db_lineas.php',
+    dataType: 'json',
+    data: {functionname: 'insertLineaDeProducto', arguments: []},
+    success: function (obj, textstatus) {
+                  console.log(obj);
+                  console.log(textstatus);
+                  if( textstatus == "success" ) {
+                      idLinea = obj;
+                      $clone.find('td#idLinea').html(idLinea);
+                      $clone.find('td#nombreLinea').html('Nueva linea');
+                      $clone.find('td#comisionLinea').html('0.0');
+                  }
+                  else {
+                      console.log(obj.error);
+                  }
+            }
+  });
+  
+  console.log($clone);
   $TABLE.find('table').append($clone);
 });
 
 $('.table-remove').click(function () {
+  var $id = $(this).parents('tr');
+  console.log($id.parents('tr').find('td#idLinea'));
   $(this).parents('tr').detach();
+  /*
+  jQuery.ajax({
+    type: "POST",
+    url: 'db_lineas.php',
+    dataType: 'json',
+    data: {functionname: 'insertLineaDeProducto', arguments: []},
+    success: function (obj, textstatus) {
+                  console.log(obj);
+                  console.log(textstatus);
+                  if( textstatus == "success" ) {
+                      idLinea = obj;
+                      $clone.find('td#idLinea').html(idLinea);
+                      $clone.find('td#nombreLinea').html('Nueva linea');
+                      $clone.find('td#comisionLinea').html('0.0');
+                  }
+                  else {
+                      console.log(obj.error);
+                  }
+            }
+  });
+  */
 });
 
 $('.table-up').click(function () {
