@@ -8,24 +8,13 @@
   </head>
   <body>
       
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Proyecto</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Registro de ventas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Mis comisiones</a>
-        </li>
-            
-      </ul>
-    </nav>
+  <?php
+    include('navbarvendedor.php')
+  ?>
 
     <div class="container">
       <div class="row">
-        <h1 class="col-sm-12">Control de ventas</h1>
+        <h1>Control de ventas</h1>
       </div>
       <div class="row">
         <div class="col">
@@ -177,16 +166,15 @@
     $('#menu-nueva-venta').toggleClass("collapsed");
   });
 
-function datepicker(id){
-  $('#'+id).daterangepicker({
-      singleDatePicker: true,
-			timePicker: true,
-      minDate:new Date(),
-			locale: {
-				format: 'YYYY/MM/DD HH:mm'
-      }
-    });    
-}
-datepicker('inicio')
+    function datepicker(id){
+      $('#'+id).daterangepicker({
+          singleDatePicker: true,
+                timePicker: true,
+          minDate:new Date(),
+                locale: {
+                    format: 'YYYY/MM/DD HH:mm'
+          }
+        });
+    }
   </script>
 </html>
