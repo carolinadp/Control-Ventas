@@ -50,7 +50,7 @@ include("db_manager.php");
 </div>
 
 </body>
-<script src="js/jquery-3.3.0.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
 <script src='js/jquery-ui.min.js'></script>
 <script src='js/underscore.js'></script>
 <script src='js/bootstrap.min.js'></script>
