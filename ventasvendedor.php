@@ -7,8 +7,8 @@ include("db_manager.php");
     <title>Registro personal de ventas</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/daterangepicker.css" />
   </head>
   <body>
@@ -93,9 +93,9 @@ include("db_manager.php");
 
       </div>
 
-      <div class="row my-4">
+      <div class="row my-4 table-responsive">
         <?php
-            getVentasFechas(4, "03-04-2019", "04-04-2019");
+            getVentasUsuario(4);
         ?>
       </div>
     </div>
@@ -120,6 +120,5 @@ include("db_manager.php");
   }, function(start, end, label) {
       console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
   });
-
   </script>
 </html>

@@ -118,59 +118,86 @@
                             <th>
                             		Validada
 														</th>
+														<th>
+																Acciones
+</th>
                         </tr>";
 
 		$result = (sqlSelect($sql));
 		while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
 			$miestatus = ($row[8] == 1) ? "Pagada" : "Pendiente";
 			$mivalidada = ($row[10] == 1) ? "Sí" : "No";
+
+			$resultLineas = getLineasArray();
+			$milinea = $row[6];
+			$lineaselect = "";
+			$lineaselect .= '<select class="form-control table-combo" id="linea-producto" style="width:200px;">';
+			while ($linea = mysqli_fetch_array($resultLineas)) {
+				$toadd = '';
+				if ($milinea == $linea[0]) {
+						$toadd = 'selected';
+				}
+				$lineaselect.= '<option '. $toadd .' value="' . $linea[0] . '">'. $linea[1] . '</option>';
+			}
+			$lineaselect .= '</select>';
+
+			$selectedPendiente = ($row[8] == 0)? 'selected' : "";
+			$selectedPagado = ($row[8] == 1)? 'selected' : "";
+
+
 			echo "<tr>
 							<td>
-									".$row[0]."
+									<input value='{$row[0]}'>
 							</td>
 							<td>
-									".$row[1]."
+									<input value='{$row[1]}'>
 							</td>
 							<td>
-									".$row[2]."
+									<input value='{$row[2]}'>
 							</td>
 							<td>
-									".$row[3]."
+									<input value='{$row[3]}'>
 							</td>
 							<td>
-									".$row[4]."
+									<input value='{$row[4]}'>
 							</td>
 							<td>
-									".$row[5]."
+									<input value='{$row[5]}'>
 							</td>
 							<td>
-									".$row[6]."
+									".$lineaselect."
 							</td>
 							<td>
-									".$row[7]."
+									<input value='{$row[7]}'>
+							</td>
+							<td class='col-md-2'>
+									<select class=\"form-control\" id=\"estatus\" style=\"width:200px;\">
+										<option ".$selectedPendiente." value=\"0\">Pendiente</option>
+										<option ".$selectedPagado." value=\"1\">Pagada</option>
+									</select>
 							</td>
 							<td>
-									".$miestatus."
-							</td>
-							<td>
-									".$row[9]."
+									<input value='{$row[9]}'>
 							</td>
 							<td>
 									".$mivalidada."
+							</td>
+							<td>
+									<button class=\"btn btn-primary\" data-editar='{$row[11]}'>Actualizar</button>    
 							</td>
 					</tr>";
 		}
 	}
 
 	function getVentasUsuario($id_usuario){
-		$sql = "SELECT venta.cliente, venta.empresa, venta.concepto, venta.monto, DATE_FORMAT(venta.fecha_ingreso, '%d-%m-%Y'), DATE_FORMAT(venta.fecha_pago, '%d-%m-%Y'), Linea_de_Producto.nombre, numero_factura, estatus, (Linea_de_Producto.comision * venta.monto) AS micomision, validada FROM venta ".
+		$sql = "SELECT venta.cliente, venta.empresa, venta.concepto, venta.monto, DATE_FORMAT(venta.fecha_ingreso, '%d-%m-%Y'), DATE_FORMAT(venta.fecha_pago, '%d-%m-%Y'), venta.linea_producto, numero_factura, estatus, (Linea_de_Producto.comision * venta.monto) AS micomision, validada, venta.id_venta FROM venta ".
 			"INNER JOIN Linea_de_Producto ON Linea_de_Producto.id_linea_de_producto = venta.linea_producto".
 			" WHERE venta.id_usuario = ". $id_usuario;
 		getVentas($sql);
 	}
 
 	function getVentasFechas($id_usuario, $fecha_inicio, $fecha_fin){
-		$sql = "SELECT venta.cliente, venta.empresa, venta.concepto, venta.monto, DATE_FORMAT(venta.fecha_ingreso, '%d-%m-%Y'), DATE_FORMAT(venta.fecha_pago, '%d-%m-%Y'), Linea_de_Producto.nombre, numero_factura, estatus, (Linea_de_Producto.comision * venta.monto) AS micomision, validada FROM venta ".
+		$sql = "SELECT venta.cliente, venta.empresa, venta.concepto, venta.monto, DATE_FORMAT(venta.fecha_ingreso, '%d-%m-%Y'), DATE_FORMAT(venta.fecha_pago, '%d-%m-%Y'), venta.linea_producto, numero_factura, estatus, (Linea_de_Producto.comision * venta.monto) AS micomision, validada, venta.id_venta FROM venta ".
 			"INNER JOIN Linea_de_Producto ON Linea_de_Producto.id_linea_de_producto = venta.linea_producto".
 			" WHERE venta.id_usuario = ". $id_usuario ." AND venta.fecha_ingreso >= STR_TO_DATE('".$fecha_inicio."', '%d-%m-%Y') AND venta.fecha_ingreso <= STR_TO_DATE('".$fecha_fin."', '%d-%m-%Y')";
 
@@ -277,10 +304,14 @@
 
 		getVentasEditar($sql);
 	}
-
-	function getLineasSelect(){
+  function getLineasArray(){
 		$sql = "SELECT id_linea_de_producto, nombre FROM Linea_de_Producto";
 		$result = (sqlSelect($sql));
+		return $result;
+	}
+
+	function getLineasSelect(){
+		$result = getLineasArray();
 		echo '<select class="form-control" id="linea-producto">';
 		while ($linea = mysqli_fetch_array($result)) {
 			echo '<option value="' . $linea[0] . '">'. $linea[1] . '</option>';
@@ -304,3 +335,14 @@
 		}
 	}
 ?>
+
+<script>
+	$("[data-editar]").on("click", function() {
+		var id = $(this).data("editar");
+
+		$.post("controllerventasvendedor.php", $(this).parents("tr").find("input").serialize(), function(resp){
+			$("table").html(resp);
+		});
+
+	});
+</script>
