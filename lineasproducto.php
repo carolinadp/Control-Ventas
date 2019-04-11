@@ -41,12 +41,12 @@ include("db_manager.php");
         <td>
           <span class="table-remove">Remover</span>
         </td>
+        <td>
+          <span class = "table-update">Actualizar</span>
+        </td>
       </tr>
     </table>
   </div>
-  
-  <button id="export-btn" class="btn btn-primary">Export Data</button>
-  <p id="export"></p>
 </div>
 
 </body>

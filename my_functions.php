@@ -189,7 +189,7 @@
 	
 	function getLineasDeProducto()
 	{
-		$sql = "SELECT * FROM Linea_de_Producto";
+		$sql = "SELECT * FROM Linea_de_Producto ORDER BY id_linea_de_producto ASC";
 		$result = (sqlSelect($sql));
 
 		while( $row = mysqli_fetch_array($result,MYSQLI_BOTH) ){
@@ -198,6 +198,7 @@
 			echo "<td contenteditable='true' id='nombreLinea'>".$row["nombre"]."</td>";
 			echo "<td contenteditable='true' id='comisionLinea'>".$row["comision"]."</td>";
 			echo "<td><span  class='table-remove'>Remover</span></td>";
+			echo "<td><span class = 'table-update'>Actualizar</span></td>";
 			echo "</tr>";
 		}
 	}

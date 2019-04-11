@@ -49,6 +49,31 @@ $('.table-remove').click(function () {
   });
 });
 
+$('.table-update').click(function(){
+  $id = $(this).parents('tr').find('#idLinea').html();
+  $nombre = $(this).parents('tr').find('#nombreLinea').html();
+  $comision = $(this).parents('tr').find('#comisionLinea').html();
+  console.log($id);
+  console.log($nombre);
+  console.log($comision);
+  jQuery.ajax({
+    type: "POST",
+    url: 'db_lineas.php',
+    dataType: 'json',
+    data: {functionname: 'updateLineaProducto', arguments: [$nombre, $comision, $id]},
+    success: function (obj, textstatus) {
+                  console.log(obj);
+                  console.log(textstatus);
+                  if( textstatus == "success" ) {
+                    console.log('todo bien');
+                  }
+                  else {
+                      console.log(obj.error);
+                  }
+            }
+  });
+});
+
 $('.table-up').click(function () {
   var $row = $(this).parents('tr');
   if ($row.index() === 1) return; // Don't go above the header
