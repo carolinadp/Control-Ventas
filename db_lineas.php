@@ -21,6 +21,11 @@
             $sql = "DELETE FROM Linea_de_Producto WHERE Linea_de_Producto.id_linea_de_producto = ".$argumentos[0];
             sqlInsert($sql);
             break;
+
+        case 'updateLineaProducto':
+            $sql = "UPDATE Linea_de_Producto SET nombre = '".$argumentos[0]."', comision = ".$argumentos[1]." WHERE id_linea_de_producto = ".$argumentos[2];
+            sqlInsert($sql);
+            break;
     }
     echo json_encode($res);
 ?>

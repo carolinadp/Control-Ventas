@@ -204,7 +204,107 @@
 		getVentas($sql);
 	}
 
-	function getLineasArray(){
+	function getVentasEditar($sql) {
+
+		echo "<table class=\"table table-striped\" id=\"tabla-principal\">
+                        <thead>
+						<tr>
+							<th>
+								ID de venta
+							</th>
+                            <th>
+                                Cliente
+                            </th>
+                            <th>
+                                Empresa
+                            </th>
+                            <th>
+                                Concepto
+                            </th>
+                            <th>
+                                Monto antes de impuestos
+                            </th>
+                            <th>
+                                Fecha de ingreso
+                            </th>
+                            <th>
+                                Fecha de pago
+                            </th>
+                            <th>
+                                Linea de producto
+                            </th>
+                            <th>
+                                Numero factura
+                            </th>
+                            <th>
+                                Estatus
+                            </th>
+                            <th>
+                                Comisión
+                            </th>
+                            <th>
+                            		Validada
+														</th>
+                        </tr>";
+
+		$result = (sqlSelect($sql));
+		while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+			$miestatus = ($row[9] == 1) ? "Pagada" : "Pendiente";
+			$mivalidada = ($row[11] == 1);
+			echo "<tr>
+							<td>
+									".$row[0]."
+							</td>
+							<td>
+									".$row[1]."
+							</td>
+							<td>
+									".$row[2]."
+							</td>
+							<td>
+									".$row[3]."
+							</td>
+							<td>
+									".$row[4]."
+							</td>
+							<td>
+									".$row[5]."
+							</td>
+							<td>
+									".$row[6]."
+							</td>
+							<td>
+									".$row[7]."
+							</td>
+							<td>
+									".$row[8]."
+							</td>
+							<td>
+									".$miestatus."
+							</td>
+							<td>
+									".$row[10]."
+							</td>
+							<td>
+							<input type='checkbox' ";
+							if ($miestatus)
+							{
+								echo "checked";
+							}
+							echo "/>&nbsp;
+							</td>
+					</tr>";
+		}
+	}
+
+	function getVentasFechasEditar($id_usuario, $fecha_inicio, $fecha_fin){
+		$sql = "SELECT venta.id_venta, venta.cliente, venta.empresa, venta.concepto, venta.monto, DATE_FORMAT(venta.fecha_ingreso, '%d-%m-%Y'), DATE_FORMAT(venta.fecha_pago, '%d-%m-%Y'), Linea_de_Producto.nombre, numero_factura, estatus, (Linea_de_Producto.comision * venta.monto) AS micomision, validada FROM venta ".
+			"INNER JOIN Linea_de_Producto ON Linea_de_Producto.id_linea_de_producto = venta.linea_producto".
+			" WHERE venta.id_usuario = ". $id_usuario ." AND venta.fecha_ingreso >= STR_TO_DATE('".$fecha_inicio."', '%d-%m-%Y') AND venta.fecha_ingreso <= STR_TO_DATE('".$fecha_fin."', '%d-%m-%Y')";
+
+		getVentasEditar($sql);
+	}
+  function getLineasArray(){
 		$sql = "SELECT id_linea_de_producto, nombre FROM Linea_de_Producto";
 		$result = (sqlSelect($sql));
 		return $result;
@@ -221,15 +321,16 @@
 	
 	function getLineasDeProducto()
 	{
-		$sql = "SELECT * FROM Linea_de_Producto";
+		$sql = "SELECT * FROM Linea_de_Producto ORDER BY id_linea_de_producto ASC";
 		$result = (sqlSelect($sql));
 
 		while( $row = mysqli_fetch_array($result,MYSQLI_BOTH) ){
 			echo "<tr>";
-			echo "<td contenteditable='false'>".$row["id_linea_de_producto"]."</td>";
-			echo "<td contenteditable='true'>".$row["nombre"]."</td>";
-			echo "<td contenteditable='true'>".$row["comision"]."</td>";
-			echo "<td><span class='table-remove'>Remover</span></td>";
+			echo "<td contenteditable='false' id='idLinea'>".$row["id_linea_de_producto"]."</td>";
+			echo "<td contenteditable='true' id='nombreLinea'>".$row["nombre"]."</td>";
+			echo "<td contenteditable='true' id='comisionLinea'>".$row["comision"]."</td>";
+			echo "<td><span  class='table-remove'>Remover</span></td>";
+			echo "<td><span class = 'table-update'>Actualizar</span></td>";
 			echo "</tr>";
 		}
 	}

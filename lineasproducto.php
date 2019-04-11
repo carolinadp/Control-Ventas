@@ -41,12 +41,12 @@ include("db_manager.php");
         <td>
           <span class="table-remove">Remover</span>
         </td>
+        <td>
+          <span class = "table-update">Actualizar</span>
+        </td>
       </tr>
     </table>
   </div>
-  
-  <button id="export-btn" class="btn btn-primary">Export Data</button>
-  <p id="export"></p>
 </div>
 
 </body>
@@ -54,7 +54,5 @@ include("db_manager.php");
 <script src='js/jquery-ui.min.js'></script>
 <script src='js/underscore.js'></script>
 <script src='js/bootstrap.min.js'></script>
-<script src="js/bootstrap.min.js"></script>
 <script src="js/edittable.js"></script>
-
 </html>

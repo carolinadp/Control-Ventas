@@ -20,6 +20,15 @@
   .table-up:hover, .table-down:hover {
     color: #00f;
   }
+
+  .table-update{
+    color: #007;
+    cursor: pointer;
+  }
+
+  .table-update:hover{
+    color: #00f;
+  }
   
   .table-add {
     color: #070;
